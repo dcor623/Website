@@ -9,16 +9,9 @@
         window.addEventListener('m-authenticated', async (event) => {
             // Get the data client instance
             const client = event.detail.client;
-            client.getNFTsOfOwner({
-                filters: [
-                    {
-                        contractAddress: '0xe63d43bc3670ff5f0e34c88304c651ba6f448c36'
-                    }
-                    ]
-            })
-
+            
             // Get the NFTs owned by the currently connected wallet
-           /* const tokens = await client.getNFTsOfOwner();
+            const tokens = await client.getNFTsOfOwner();
             const h2 = document.createElement("h2");
             h2.innerHTML = "Your NFTs";
             document.getElementById("nfts").appendChild(
@@ -31,7 +24,7 @@
                 img.height = 200;
                 img.width = 200;
                 document.getElementById("nfts").appendChild(img);
-           */ }
+            }
         })
         window.addEventListener('m-unauthenticated', async (event) => {
             document.getElementById("nfts").innerHTML = "";
@@ -42,10 +35,10 @@
              data-grant-type="signature"
              data-app-name="NFTShowcase"
              data-client-id="96c1d2d1bee491b271a9463b1b950b359c06a0ce750690314753b6d9a62fd2c4"
-             data-redirect-uri="https://dcor623.github.io/Website/"
              data-network="5"
              style="margin-top: 10px; margin-bottom: 10px; display: flex; flex-direction: row; justify-content: center;">
-            <div id="nfts"></div>
+            <div id="nfts">
+            </div>
         </div>
         </div>
 </body>
