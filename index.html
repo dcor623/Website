@@ -12,6 +12,7 @@
             
             // Get the NFTs owned by the currently connected wallet
             const tokens = await client.getNFTsOfOwner();
+            console.log('hi!', tokens)
             const h2 = document.createElement("h2");
             h2.innerHTML = "Your NFTs";
             document.getElementById("nfts").appendChild(
